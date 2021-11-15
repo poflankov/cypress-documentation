@@ -20,24 +20,31 @@ If you are still facing issues after this, please
 
 </Alert>
 
+<Alert type="warning">
+
+GitLab for Enterprise Integration is dependent on your self-managed GitLab instance being able to reach our Dashboard API on the open internet. If your instance is running behind a firewall, you may need to reconfigure your security infrastructure to allow communication with our servers.
+
+</Alert>
+
 ## Installing the GitLab integration
 
 <Alert type="warning">
 
 GitLab OAuth2 applications will allow the Cypress Dashboard to authenticate as
-the user that registered the application. That means the Cypress will have
-visibility to every GitLab repo you can access. If you want tighter control on
-the repos that the Cypress will see, consider creating a service account with
-more limited access in GitLab.
+the user that registered the application. That means that Cypress will have
+visibility into every GitLab repo the registered user can access. If you want tighter control of
+the repos that Cypress will see, consider creating a service account in GitLab with
+more limited access permissions.
 
 </Alert>
 
-1. Visit **Integrations → GitLab** in the Cypress Dashboard.
+1. In your organization, visit **Integrations → GitLab** (if you are using [GitLab SaaS](https://docs.gitlab.com/ee/subscriptions/gitlab_com/)) or **GitLab for Enterprise** (if you are using [GitLab self-managed](https://docs.gitlab.com/ee/subscriptions/self_managed/)) in the Cypress Dashboard.
 2. Follow the instructions to create a new OAuth2 application in GitLab. See the
    [GitLab docs](https://docs.gitlab.com/ee/integration/oauth_provider.html#adding-an-application-through-the-profile)
    for more details.
 3. Copy the Application ID and Secret back to the Cypress Dashboard.
-4. Connect your projects to a GitLab repo.
+4. (GitLab for Enterprise only) Copy the base URL of your GitLab instance to the GitLab URL field in Cypress Dashboard.
+5. Connect your projects to a GitLab repo in **Project Settings → GitLab Integration** or **GitLab for Enterprise Integration**.
 5. (Optional) Configure the behavior for each project.
 
 ## Configuring the GitLab integration
