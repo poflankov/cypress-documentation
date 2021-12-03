@@ -38,7 +38,7 @@ component it has rendered. A test may interact with component as a user would,
 using Cypress API commands like [.click()](/api/commands/click),
 [.type()](/api/commands/type), or [many more](/api/api/table-of-contents).
 
-With Cypress as the Test Runner and assertions framework, component tests in
+With Cypress as the Cypress App and assertions framework, component tests in
 React and Vue look very similar. Here's an example, written in React:
 
 ```javascript
@@ -99,7 +99,7 @@ to create a new Webpack config, then continue following the
 ### ⚠️ Existing end-to-end users
 
 If you are using Cypress Component Testing in a project that also has tests
-written with the Cypress End-to-End test runner, you may want to configure some
+written with the Cypress End-to-End Cypress App, you may want to configure some
 Component Testing specific defaults.
 
 You can configure or override Component Testing defaults in your
