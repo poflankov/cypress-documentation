@@ -378,8 +378,8 @@ module.
 
 Also, you need to tell Cypress where to find your component tests. While it's
 possible to mount components in the `pages` directory, generally you will want
-to be more granular with your component tests - full page tests are best
-implemented with Cypress e2e runner.
+to be more granular with your component tests - full page tests are best suited
+using the End-to-End option in the Cypress App.
 
 The following example configuration assumes that all the test files are
 somewhere in the `components` folder, and end with the `.spec.js` extension.
