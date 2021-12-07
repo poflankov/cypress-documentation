@@ -82,7 +82,7 @@ export default {
     },
     getSidebarItemClass(folder, child) {
       const ACTIVE_CLASS = 'active-sidebar-link'
-      const INACTIVE_CLASS = 'text-gray-600'
+      const INACTIVE_CLASS = 'text-gray-500'
       const isCurrentRedirect =
         child.redirect && child.redirect.includes(this.path)
       const isActiveNode = this.path.endsWith(`${folder}/${child.slug}`)
@@ -113,14 +113,14 @@ export default {
     :data-test="folder"
   >
     <button
-      class="group w-full flex items-center text-left px-2 pl-4 pr-1 text-lg font-bold bg-lightGray text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none"
+      class="group w-full flex items-center text-left px-2 pl-4 pr-1 text-xl font-bold bg-lightGray text-gray-700 hover:text-gray-500 hover:bg-gray-50 focus:outline-none"
       @click="toggleSection"
     >
       {{ label }}
       <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
       <svg
-        :class="isOpen ? 'text-gray-400 rotate-90' : 'text-gray-300'"
-        class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150"
+        :class="isOpen ? 'text-gray-700 rotate-90' : 'text-gray-700'"
+        class="ml-auto h-5 w-5 transform group-hover:text-gray-500 transition-colors ease-in-out duration-150"
         viewBox="0 0 20 20"
         aria-hidden="true"
       >
@@ -151,17 +151,17 @@ export default {
           :name="child.slug"
           :depth="depth + 1"
         />
-        <li v-else-if="child.redirect || child.slug">
+        <li v-else-if="child.redirect || child.slug" class="ml-6">
           <nuxt-link
             :to="child.redirect || `/${section}/${folder}/${child.slug}`"
             :class="getSidebarItemClass(folder, child)"
-            class="rounded-md group w-full flex items-center pl-4 pr-2 py-1 text-md font-medium hover:text-green transition-colors hover:bg-gray-50"
+            class="rounded-md group w-full flex items-center pl-4 pr-2 py-1 text-lg font-semibold hover:text-green transition-colors hover:bg-gray-50"
           >
             {{ child.title }}
           </nuxt-link>
         </li>
         <li v-else>
-          <div class="pl-4 py-0 mt-4 text-base font-bold text-gray-600 grid grid-cols-1">
+          <div class="pl-4 py-0 mt-4 ml-6 text-lg font-bold text-gray-700 grid grid-cols-1">
           {{ child.title }}
           </div>
         </li>
