@@ -68,8 +68,8 @@ export default {
             {{ child.title }}
           </nuxt-link>
         </div>
-        <div v-else class="pl-4 py-0 mt-4 text-xs font-semibold text-gray-400 grid grid-cols-1">
-          <span class="border-b border-gray-300 border-dashed">{{ child.title }}</span>
+        <div v-else class="pl-4 py-0 mt-4 text-base font-bold text-gray-600 grid grid-cols-1">
+          {{ child.title }}
         </div>
       </li>
     </ul>
